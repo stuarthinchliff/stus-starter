@@ -1,0 +1,31 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+        - image: continuumio/miniconda3
+
+    steps:
+      - checkout
+      - run:
+          name: Install and activate conda
+          command: |
+            conda env create -f env.yml -n environ
+      - run:
+          name: Run unittests
+          command: |
+            source activate environ
+            conda activate environ
+            python tests/unittests/test_something.py
+      - run:
+          name: Run linters
+          command: |
+            source activate environ
+            conda activate environ
+            python linters/flake_lint.py
+            python linters/radon_cc.py
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
