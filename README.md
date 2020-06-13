@@ -9,12 +9,13 @@ See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-Will require some things!
+Will require some things:
+* [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
 ### Installing
 
 
-You can build and run the environment using:
+You can build and run the environment using conda:
 
 ```
 conda env create -f env.yml -n myenv
@@ -71,5 +72,3 @@ See also the list of [contributors](https://github.com/stuarthinchliff/stus-star
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-
-* 
