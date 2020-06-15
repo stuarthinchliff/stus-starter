@@ -11,9 +11,22 @@ from black import (
 )
 from pathlib import Path
 import os
+import argparse
 
 
-def main():
+def parse_args():
+    parser = argparse.ArgumentParser(description="Run the black formatter.")
+    parser.add_argument(
+        "-f",
+        "--force",
+        action="store_true",
+        default=False,
+        help="an integer for the accumulator",
+    )
+    return parser.parse_args()
+
+
+def main(args):
     """
     This matches the default behaviour of the black formatter.
     This script will raise an exception if changes by black are required.
@@ -30,9 +43,9 @@ def main():
         )
     )
 
-    # To conform to flake8 line length
+    # To conform to flake8 line length used for this project.
     mode = FileMode(line_length=79)
-    write_back = WriteBack.from_configuration(check=False, diff=True)
+    write_back = WriteBack.from_configuration(check=False, diff=args.force)
 
     reformat_many(
         sources=sources,
@@ -45,10 +58,11 @@ def main():
     if report.change_count != 0:
         exception_msg = """
                            Black formatter suggests formatting changes required
-                           Run 'black . -l 79' to automatically format.
+                           Run with '-f' option to automatically format.
                         """
         raise Exception(exception_msg)
 
 
 if __name__ == "__main__":
-    main()
+    opts = parse_args()
+    main(opts)
