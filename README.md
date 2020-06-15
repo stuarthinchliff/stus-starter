@@ -1,11 +1,14 @@
 # New Project!
 
-New project!
+New project! Always good to start with a new project with a good basis. This project is to act as a template for python projects. 
+
+It starts with some basics such as conda to manage the environment, a circleci yml to be used for continuous integration, unittests and some linting.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
-See deployment for notes on how to deploy the project on a live system.
+
+Select the "Use this template" to kick off a new project with this basis.
 
 ### Prerequisites
 
@@ -51,10 +54,6 @@ A wrapper script is used to monitor code complexity.
 ```
 python linters/radon_cc.py
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
