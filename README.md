@@ -1,5 +1,7 @@
 # New Project!
 
+[![stuarthinchliff](https://circleci.com/gh/stuarthinchliff/stus-starter.svg?style=shield)](https://app.circleci.com/pipelines/github/stuarthinchliff/stus-starter)
+
 New project! Always good to start with a new project with a good basis. This project is to act as a template for python projects. 
 
 It starts with some basics such as conda to manage the environment, a circleci yml to be used for continuous integration, unittests and some linting.
