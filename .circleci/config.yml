@@ -24,6 +24,7 @@ jobs:
             conda activate environ
             python linters/flake_lint.py
             python linters/radon_cc.py
+            python linters/black_formatter.py
 
 workflows:
   main:

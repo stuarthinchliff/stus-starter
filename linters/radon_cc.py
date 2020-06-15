@@ -9,17 +9,17 @@ from radon.cli.harvest import CCHarvester
 
 
 def analyze(paths):
-    '''
+    """
     Analyze the files from the path specified
-    '''
+    """
     config = Config(
         exclude=None,
         ignore=None,
         order=SCORE,
         no_assert=True,
         show_closures=False,
-        min='A',
-        max='F',
+        min="A",
+        max="F",
         show_complexity=True,
         total_average=True,
         average=True,
@@ -28,6 +28,6 @@ def analyze(paths):
     log_result(h, stream=sys.stdout)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     paths = [os.getcwd()]
     analyze(paths)
