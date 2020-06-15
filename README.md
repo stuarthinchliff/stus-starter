@@ -43,11 +43,14 @@ python tests/unittests/test_something.py
 
 ### And coding style tests
 
+Code quality and style is maintained with the help of scripts in the "linters" folder. These are wrappers of the cli provided by these packages to be tailored specifically at a project level. 
+
 Coding style adheres to flake8 for which a linter script is used and can be run as per below:
 
 ```
 python linters/flake_lint.py
 ```
+Note that E203 is ignored to allow Black to format the code.
 
 Code quality is measured by radon. The project aims to adhere to a maximum code complexity of 15.
 A wrapper script is used to monitor code complexity.
@@ -55,10 +58,16 @@ A wrapper script is used to monitor code complexity.
 python linters/radon_cc.py
 ```
 
+Black is used to format code. It complies to the line length set by Flake8 (79) in this project. Providing the '-f' option will automatically format code.
+```
+python linters/black_formatter.py -f
+```
+
 ## Built With
 
 * [Flake8](https://flake8.pycqa.org/en/latest/) - Linting
 * [Radon](https://radon.readthedocs.io/en/latest/) - Code Quality
+* [Black](https://black.readthedocs.io/en/stable/) - Automatic code formatting
 
 ## Authors
 
