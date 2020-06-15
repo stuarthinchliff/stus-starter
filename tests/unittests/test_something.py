@@ -3,10 +3,7 @@ import unittest
 
 class TestExample(unittest.TestCase):
     def test_pass(self):
-        self.assertEqual("foo", "foo")
-
-    def test_fail(self):
-        self.assertEqual("g", "y")
+        self.assertEqual("foo", "FOO".lower())
 
 
 if __name__ == "__main__":
