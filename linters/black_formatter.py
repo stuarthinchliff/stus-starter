@@ -45,7 +45,7 @@ def main(args):
 
     # To conform to flake8 line length used for this project.
     mode = FileMode(line_length=79)
-    write_back = WriteBack.from_configuration(check=False, diff=args.force)
+    write_back = WriteBack.from_configuration(check=False, diff=not args.force)
 
     reformat_many(
         sources=sources,
